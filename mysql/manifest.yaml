@@ -40,13 +40,6 @@ spec:
       containers:
       - name: mysql
         image: manojkoneyagari/mysql:2.0
-        resources:
-          requests:
-            cpu: "120m"
-            memory: "130Mi"
-          limits:
-            cpu: "150m"
-            memory: "150Mi"
         args: ["--mysql-native-password=ON"]
         envFrom:
         - secretRef:
