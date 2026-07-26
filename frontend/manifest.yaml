@@ -114,7 +114,7 @@ spec:
           readOnly: true
       volumes:
       - name: nginx-config
-        ConfigMap: 
+        configMap: 
           name: frontend-config
           items:
             - key: nginx.conf 
