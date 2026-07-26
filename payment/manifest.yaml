@@ -93,7 +93,7 @@ spec:
         envFrom:
         - secretRef:
             name: payment-secret
-        - configMap:
+        - configMapRef:
             name: payment-config
         
 
