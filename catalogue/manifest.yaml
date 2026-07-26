@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: catalogue-deploy
+  Namespace: Roboshop
+  labels: 
+    project: roboshop
+    env: dev
+    purpose: Deployment 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      project: roboshop
+      env: dev
+      component: catalogue
+    
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        env: dev
+        component: catalogue
+
+    spec:
+      containers:
+      - name: catalogue
+        image: manojkoneyagari/catalogue:2.0
+        resources:
+          requests:
+            cpu: "120m"
+            memory: "130Mi"
+          limits:
+            cpu: "150m"
+            memory: "150Mi"
+        
+
+
+---
+apiVersion: v1
+kind: Service 
+metadata: 
+  name: catalogue
+  Namespace: Roboshop
+  labels:
+    project: roboshop
+    env: dev
+    purpose: service 
+spec:
+  selector:
+    project: roboshop
+    env: dev
+    component: catalogue
+
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+
+
+
