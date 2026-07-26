@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: cart
-        image: manojkoneyagari/user:2.0
+        image: manojkoneyagari/cart:2.0
         resources:
           requests:
             cpu: "120m"
