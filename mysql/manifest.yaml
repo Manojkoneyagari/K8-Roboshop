@@ -41,9 +41,9 @@ spec:
       - name: mysql
         image: manojkoneyagari/mysql:2.0
         args: ["--mysql-native-password=ON"]
-        envFrom:
-        - secretRef:
-            name: mysql-secret
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "RoboShop@1"
 
 ---
 apiVersion: v1
