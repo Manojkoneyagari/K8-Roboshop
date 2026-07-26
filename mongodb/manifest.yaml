@@ -27,15 +27,6 @@ spec:
       containers:
       - name: mongodb
         image: manojkoneyagari/mongodb:2.0
-        resources:
-          requests:
-            cpu: "120m"
-            memory: "130Mi"
-          limits:
-            cpu: "150m"
-            memory: "150Mi"
-
-
 ---
 apiVersion: v1
 kind: Service 
